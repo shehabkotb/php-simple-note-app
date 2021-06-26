@@ -1,10 +1,17 @@
+<?php include_once(__DIR__ . "/middlewares/auth.php"); ?>
 <?php
-include_once "./templates/header.php";
+include_once(__DIR__ . "/models/User.php");
+$user = User::get_by_id($user_id);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 </head>
 
 <body>
-    <p>index or login page</p>
-    <a href="/notes.php">go to notes</a>
+    <?= "hello $user->name" ?>
+    <a href="logout.php">Logout</a>
 </body>
+
+</html>

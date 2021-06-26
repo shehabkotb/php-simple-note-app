@@ -1,5 +1,5 @@
 INSERT INTO `users` (`id`, `name`) VALUES
-(1, 'test user');
+(1, 'test user', 'test');
 
 INSERT INTO `notes` (`id`, `creator_id`, `title`, `content`) VALUES
 (1, 1, 'note 1', 'some test text'),

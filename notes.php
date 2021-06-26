@@ -1,5 +1,6 @@
 <?php
 include_once "./templates/header.php";
+include_once(__DIR__ . "/middlewares/auth.php");
 ?>
 
 <link rel="stylesheet" href="../styles/note.css">
