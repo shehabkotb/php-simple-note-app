@@ -97,22 +97,18 @@
     public function update() {
           // Create query
           $query = 'UPDATE ' . $this->table . '
-                                SET title = :title, content = :content, creator_id = :creator_id
+                                SET content = :content
                                 WHERE id = :id';
 
           // Prepare statement
           $stmt = $this->conn->prepare($query);
 
           // Clean data
-          $this->title = htmlspecialchars(strip_tags($this->title));
           $this->content = htmlspecialchars(strip_tags($this->content));
-          $this->creator_id = htmlspecialchars(strip_tags($this->creator_id));
           $this->id = htmlspecialchars(strip_tags($this->id));
 
           // Bind data
-          $stmt->bindParam(':title', $this->title);
           $stmt->bindParam(':content', $this->content);
-          $stmt->bindParam(':creator_id', $this->creator_id);
           $stmt->bindParam(':id', $this->id);
 
           // Execute query

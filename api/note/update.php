@@ -28,9 +28,7 @@
   // Set ID to update
   $note->id = $data->id;
 
-  $note->title = $data->title;
   $note->content = $data->content;
-  $note->creator_id = $data->creator_id;
 
   // Update note
   if($note->update()) {
