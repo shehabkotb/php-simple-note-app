@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding: 0 16px;
+  background-color: #026aa7;
+  height: 40px;
+  top: 0;
+  left: 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.notes-backdrop {
+  background: #251b43; /* fallback */
+  background-image: url('../assets/notes-backdrop.png');
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.padded-notes-area {
+  padding: 80px 60px 80px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 32px;
+}
+
+.note-card {
+  position: relative;
+  width: 260px;
+  height: 330px;
+  background-color: #fafafa;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 24px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.note-card:hover {
+  transform: scale(1.02);
+}
+
+.note-delete-btn {
+  background-color: #fafafa;
+  border: none;
+  color: #d43f3a;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.note-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-delete-btn:hover {
+  background-color: #d9d9d9;
+}
+
+.note-card-content {
+  margin-top: 24px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.empty-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-container {
+  background-color: #fafafa;
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.empty-wrapper h3 {
+  margin-top: 16px;
+}
+
+.empty-wrapper p {
+  margin-top: 16px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  color: #80b4d3;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: default;
+}
+
+.logo:hover {
+  color: #cce1ed;
+}
+
+.left-center-logo {
+  display: flex;
+  flex: 1;
+  justify-self: flex-start;
+}
+.right-center-logo {
+  display: flex;
+  flex: 1;
+  justify-self: flex-end;
+  justify-content: flex-end;
+}
