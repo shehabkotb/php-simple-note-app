@@ -18,6 +18,8 @@ try {
         throw new Exception();
     } else {
         echo json_encode($user->to_assoc());
+        session_start();
+        $_SESSION['user_id'] = $user->id;
     }
 } catch (Exception $e) {
     // Duplicate entry error code

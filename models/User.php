@@ -1,4 +1,6 @@
-<?php 
+<?php
+  include_once (__DIR__ . "/../config/Database.php");
+
   class User {
 
     private static $conn;
@@ -89,3 +91,8 @@
       );
     }
   }
+
+  $database = new Database();
+  $db = $database->connect();
+  User::set_connection($db);
+  
