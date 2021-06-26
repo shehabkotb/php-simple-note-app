@@ -31,7 +31,8 @@
         'title' => $title,
         'content' => html_entity_decode($content),
         'creator_id' => $creator_id,
-        'creator_name' => $creator_name
+        'creator_name' => $creator_name,
+        'updated_at' => $updated_at
       );
 
       // Push to "data"
