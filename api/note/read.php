@@ -5,6 +5,7 @@ header('Content-Type: application/json');
 
 include_once '../../config/Database.php';
 include_once '../../models/Note.php';
+include_once "../../middlewares/api-auth.php";
 
 // Instantiate DB & connect
 $database = new Database();
@@ -14,12 +15,9 @@ $db = $database->connect();
 $notes = new Note($db);
 
 // Blog notes query
-$result = $notes->read();
+$result = $notes->read($user_id);
 // Get row count
 $num = $result->rowCount();
-
-
-//todo get notes for authenticated user only
 
 // Check if any notess
 if ($num > 0) {

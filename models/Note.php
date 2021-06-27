@@ -20,16 +20,21 @@ class Note
   }
 
   // Get notes
-  public function read()
+  public function read($user_id)
   {
 
     $query = 'SELECT u.name as creator_name, n.id, n.creator_id, n.title, n.content, n.updated_at
                                 FROM ' . $this->table . ' n
                                 LEFT JOIN
-                                  users u ON n.creator_id = u.id';
+                                  users u ON n.creator_id = u.id
+                                  WHERE
+                                    n.creator_id = ?';
 
     // Prepare statement
     $stmt = $this->conn->prepare($query);
+
+    // Bind ID
+    $stmt->bindParam(1, $user_id);
 
     // Execute query
     $stmt->execute();

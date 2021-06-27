@@ -5,7 +5,7 @@ $(function () {
     type: 'danger',
     width: 120,
     onClick: function () {
-      DevExpress.ui.notify('The logout button was clicked')
+      window.location.href = `/logout.php`
     }
   })
 
@@ -24,8 +24,7 @@ $(function () {
       method: 'POST',
       body: JSON.stringify({
         title: event.target[0].value,
-        content: '<p>empty note</p>',
-        creator_id: '1' //todo change in backend or get it from token
+        content: '<p>empty note</p>'
       })
     })
       .then((response) => {

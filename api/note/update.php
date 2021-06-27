@@ -7,17 +7,11 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 
 include_once '../../config/Database.php';
 include_once '../../models/Note.php';
+include_once "../../middlewares/api-auth.php";
 
 // Instantiate DB & connect
 $database = new Database();
 $db = $database->connect();
-
-
-// todo
-// if(!auth){
-//     header("HTTP/1.1 401 Unauthorized");
-//     exit('Unauthorized');
-// }
 
 // Instantiate note object
 $note = new Note($db);

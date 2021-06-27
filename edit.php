@@ -1,7 +1,10 @@
 <?php
 include_once "./templates/header.php";
 include_once './config/Database.php';
+include_once "./middlewares/auth.php";
 include_once './models/Note.php';
+include_once "./models/User.php";
+$user = User::get_by_id($user_id);
 
 $database = new Database();
 $db = $database->connect();
@@ -11,14 +14,16 @@ $note = new Note($db);
 
 $note->id = isset($_GET['id']) ? $_GET['id'] : die();
 
-//todo check if creator of note
-
 $note->read_single();
 
+if ($note->creator_id != $user_id) {
+    header('Location: index.php');
+    exit;
+}
 ?>
 
 <script src="./js/editNote.js"></script>
-<link rel="stylesheet" href="./styles/edit-note.css">
+<link rel="stylesheet" href="./css/edit-note.css">
 
 </head>
 

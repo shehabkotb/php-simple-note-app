@@ -94,7 +94,7 @@ $(function () {
         })
       })
         .then((response) => {
-          window.location.href = '/notes.php'
+          window.location.href = '/index.php'
         })
         .catch((error) => {
           DevExpress.ui.notify({
@@ -114,7 +114,7 @@ $(function () {
     type: 'default',
     width: 120,
     onClick: function () {
-      window.location.href = '/notes.php'
+      window.location.href = '/index.php'
     }
   })
 })
