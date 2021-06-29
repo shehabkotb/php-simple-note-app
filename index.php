@@ -5,8 +5,8 @@ include_once "./models/User.php";
 $user = User::get_by_id($user_id);
 ?>
 
-<link rel="stylesheet" href="../css/note.css">
-<script type="text/javascript" src="../js/notes.js"></script>
+<link rel="stylesheet" href="./css/note.css">
+<script type="text/javascript" src="./js/notes.js"></script>
 
 </head>
 
